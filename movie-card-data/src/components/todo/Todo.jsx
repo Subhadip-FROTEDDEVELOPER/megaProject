@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import TodoDate from "./TodoDate";
-import TodoList from "./TodoList";
-import TodoFrom from "./TodoFrom";
 import {
+  TodoDate,
+  TodoFrom,
+  TodoList,
   getLocalStorageTodoData,
   setLocalStorageTodoData,
-} from "./TodoLocalStorage";
+} from "../todo/index";
 
 const Todo = () => {
   const [addTodo, setAddTodo] = useState(() => getLocalStorageTodoData());
-  const [isSectionVisible, setIsSectionVisible] = useState(getLocalStorageTodoData().length > 0);
+  const [isSectionVisible, setIsSectionVisible] = useState(
+    getLocalStorageTodoData().length > 0
+  );
 
   const handleSubmit = (inputValue) => {
     const { id, content } = inputValue;

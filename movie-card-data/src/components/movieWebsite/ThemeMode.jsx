@@ -1,17 +1,28 @@
-import React, { useState } from "react";
-import {Header,MovieLists,Footer} from "./index"
+import React, { useState, useEffect } from "react";
+import { Header, MovieLists, Footer } from "./index";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 const ThemeMode = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const getThemeStorage = localStorage.getItem("themeStorage");
+    return getThemeStorage === "true";
+  });
   const handleThemeMode = () => {
-    setIsDarkMode(!isDarkMode);
+    setIsDarkMode((prevMode) => !prevMode);
   };
+  useEffect(() => {
+    localStorage.setItem("themeStorage", isDarkMode);
+  }, [isDarkMode]);
 
-  const themeCheck = isDarkMode ? <MdOutlineLightMode className="text-xl"/> : <MdDarkMode className="text-xl"/>;
-  const backgroundColorCheck = isDarkMode ? "bg-gray-50 " : "bg-gray-900";
-  const textColorCheck = isDarkMode ? "text-gray-900" : "text-gray-100";
-
+  const themeCheck = isDarkMode ? (
+    <MdDarkMode 
+     className="text-xl" />
+  ) : (
+    <MdOutlineLightMode className="text-xl" />
+  );
+  const backgroundColorCheck = isDarkMode ? "bg-gray-900 " : "bg-gray-50";
+  const textColorCheck = isDarkMode ? "text-gray-100" : "text-gray-900";
+  localStorage.setItem("themeStorage", isDarkMode);
   return (
     <>
       {

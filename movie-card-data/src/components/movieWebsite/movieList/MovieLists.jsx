@@ -1,6 +1,5 @@
 import React from "react";
-import movies from "../../movie.js";
-// import MovieCard from "./MovieCard";
+import movies from "../movie.js";
 import { MovieCard } from "../index.js";
 
 const MovieLists = ({ backgroundColorCheck, textColorCheck }) => {
