@@ -19,7 +19,7 @@ const TodoFrom = ({ onAddTodo }) => {
         <input
           type="text"
           placeholder="enter name"
-          className="border-2 px-2 py-1 focus:outline-none text-xl tracking-wider"
+          className="border-2 px-2 py-1 focus:outline-none text-xl tracking-wide"
           value={inputValue.content}
           onChange={(event) => handleInputValueChange(event.target.value)}
         />

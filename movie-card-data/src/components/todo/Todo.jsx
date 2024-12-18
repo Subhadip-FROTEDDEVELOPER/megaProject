@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TodoDate from "./TodoDate";
-import TodoList from "./TodoList";s
+import TodoList from "./TodoList";
 import TodoFrom from "./TodoFrom";
 import {
   getLocalStorageTodoData,
