@@ -7,19 +7,20 @@ const SignUp = () => {
         <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
         <form action="/signup" method="POST">
           <div className="mb-4">
-            {inputBox.map((inputItem) => (
+            {inputBox.map(({ type, id, name, placeholder, required,lebel,autocomplete }) => (
               <>
-                <label className="block text-gray-700 mb-2" htmlFor="username">
-                  {inputItem.level}
+                <label className="block text-gray-700 mb-2 mt-3" htmlFor={id}>
+                  {lebel}
                 </label>
                 <input
                   className="border-2 p-2 rounded w-full"
-                  key={inputItem.id}
-                  type={inputItem.type}
-                  id={inputItem.id}
-                  name={inputItem.name}
-                  placeholder={inputItem.placeholder}
-                  required={inputItem.required}
+                  key={id}
+                  type={type}
+                  id={id}
+                  name={name}
+                  placeholder={placeholder}
+                  required={required}
+                  autoComplete={autocomplete}
                 />
               </>
             ))}

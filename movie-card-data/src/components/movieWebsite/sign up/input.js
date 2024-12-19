@@ -5,7 +5,8 @@ const inputBox = [
     name: "firstname",
     placeholder: "Enter your firstname",
     required: true,
-    level:"FirstName"
+    autocomplete:"off",
+    lebel:"FirstName"
   },
   {
     type: "text",
@@ -13,7 +14,8 @@ const inputBox = [
     name: "lastname",
     placeholder: "Enter your lastname",
     required: true,
-    level:"LastName"
+    autocomplete:"off",
+    lebel:"LastName"
   },
   {
     type: "email",
@@ -21,7 +23,8 @@ const inputBox = [
     name: "email",
     placeholder: "Enter your email",
     required: true,
-    level:"Email"
+    autocomplete:"off",
+    lebel:"Email"
   },
   {
     type: "password",
@@ -29,15 +32,17 @@ const inputBox = [
     name: "password",
     placeholder: "Enter your password",
     required: true,
-    level:"Password"
+    autocomplete:"off",
+    lebel:"Password"
   },
   {
-    type: "number",
+    type: "tel",
     id: "phonenumber",
     name: "phonenumber",
     placeholder: "Enter your phonenumber",
     required: true,
-    level:"Number"
+    autocomplete:"off",
+    lebel:"Number"
   },
 ];
 
