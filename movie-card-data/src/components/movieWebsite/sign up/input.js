@@ -1,4 +1,4 @@
-let inputBox = [
+const inputBox = [
   {
     type: "text",
     id: "firstname",
