@@ -1,4 +1,4 @@
-import Todo from "./components/todo/todo";
+import Todo from "./Todo";
 import TodoDate from "./TodoDate";
 import TodoList from "./TodoList";
 import TodoFrom from "./TodoFrom";
