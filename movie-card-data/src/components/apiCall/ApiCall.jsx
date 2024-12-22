@@ -24,7 +24,7 @@ const ApiCall = () => {
           <li className="pokemon-card">
             <figure>
               <img
-                src={pokemon.sprites?.front_default}
+                src={pokemon.sprites.front_default}
                 alt={pokemon.name}
                 className="pokemon-image"
               />
