@@ -36,29 +36,29 @@ const ApiCall = () => {
   }
   if (pokemon) {
     return (
-      <section className="container">
+      <section className="container flex flex-col items-center mt-8">
         <header>
-          <h1> Let's Catch Pokémon</h1>
+          <h1 className="text-3xl"> Let's Catch Pokémon</h1>
         </header>
-        <ul className="card-demo">
-          <li className="pokemon-card">
+        <ul className="border-2 mt-8">
+          <li className="flex flex-col items-center">
             <figure>
               <img
-                src={pokemon.sprites.front_default}
+                src={pokemon.sprites.other.dream_world.front_default}
                 alt={pokemon.name}
-                className="pokemon-image"
+                className="w-3/5 h-60 ml-16"
               />
             </figure>
-            <h1>{pokemon.name}</h1>
-            <div className="grid-three-cols">
-              <p className="pokemon-info">
-                Height: <span> {pokemon.height} </span>
+            <h1 className="text-2xl uppercase mb-4">{pokemon.name}</h1>
+            <div className="flex items-center gap-4 mb-4 px-4">
+              <p className="text-lg">
+                Height : <span> {pokemon.height} </span>
               </p>
-              <p className="pokemon-info">
-                Weight: <span> {pokemon.weight}</span>
+              <p className="text-lg">
+                Weight : <span> {pokemon.weight}</span>
               </p>
-              <p className="pokemon-info">
-                Speed: <span>{pokemon.stats[5].base_stat}</span>
+              <p className="text-lg">
+                Speed : <span>{pokemon.stats[5].base_stat}</span>
               </p>
             </div>
           </li>
