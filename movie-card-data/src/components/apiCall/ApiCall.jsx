@@ -40,13 +40,13 @@ const ApiCall = () => {
         <header>
           <h1 className="text-3xl"> Let's Catch Pokémon</h1>
         </header>
-        <ul className="border-2 mt-8">
+        <ul className="mt-8 drop-shadow-sm border-2">
           <li className="flex flex-col items-center">
-            <figure>
+            <figure className="flex justify-center drop-shadow">
               <img
                 src={pokemon.sprites.other.dream_world.front_default}
                 alt={pokemon.name}
-                className="w-3/5 h-60 ml-16"
+                className="w-3/5 h-60"
               />
             </figure>
             <h1 className="text-2xl uppercase mb-4">{pokemon.name}</h1>
