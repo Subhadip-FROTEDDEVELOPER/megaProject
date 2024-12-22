@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 const ApiCall = () => {
   const [pokemon, setPokemon] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const API = "https://pokeapi.co/api/v2/pokemon/pikachu";
 
   //useEffect(() => {
@@ -17,15 +19,21 @@ const ApiCall = () => {
       const response = await fetch(API);
       const data = await response.json();
       setPokemon(data);
+      setLoading(false);
     } catch (error) {
-      console.log(error);
+      setError(error);
+      setLoading(false);
     }
   };
   useEffect(() => {
     fetchPokemon();
   }, []);
-
-  console.log(pokemon);
+  if (loading) {
+    return <h1>Loading ....</h1>;
+  }
+  if (error) {
+    return <h1>Error:{error.message}</h1>;
+  }
   if (pokemon) {
     return (
       <section className="container">
