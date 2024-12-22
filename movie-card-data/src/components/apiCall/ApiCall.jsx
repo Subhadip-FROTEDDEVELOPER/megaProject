@@ -4,23 +4,35 @@ const ApiCall = () => {
   const [pokemon, setPokemon] = useState(null);
   const API = "https://pokeapi.co/api/v2/pokemon/pikachu";
 
+  //useEffect(() => {
+  //fetch(API)
+  // .then((res) => res.json())
+  //  .then((data) => {
+  //    setPokemon(data);
+  //  })
+  //  .catch((error) => console.log(error));
+  // }, []);
+  const fetchPokemon = async () => {
+    try {
+      const response = await fetch(API);
+      const data = await response.json();
+      setPokemon(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    fetch(API)
-      .then((res) => res.json())
-      .then((data) => {
-        setPokemon(data);
-      })
-      .catch((error) => console.log(error));
+    fetchPokemon();
   }, []);
 
   console.log(pokemon);
-  return (
-    <section className="container">
-      <header>
-        <h1> Let's Catch Pokémon</h1>
-      </header>
-      <ul className="card-demo">
-        {pokemon && (
+  if (pokemon) {
+    return (
+      <section className="container">
+        <header>
+          <h1> Let's Catch Pokémon</h1>
+        </header>
+        <ul className="card-demo">
           <li className="pokemon-card">
             <figure>
               <img
@@ -42,10 +54,10 @@ const ApiCall = () => {
               </p>
             </div>
           </li>
-        )}
-      </ul>
-    </section>
-  );
+        </ul>
+      </section>
+    );
+  }
 };
 
 export default ApiCall;
